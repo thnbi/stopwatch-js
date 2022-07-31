@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 
+
+:root {
+    --light: #d8dbe0;
+    --dark: #28292c;
+    --link: rgb(27, 129, 112);
+    --link-hover: rgb(24, 94, 82);
+  }
 *{
     margin: 0;
     padding: 0;
@@ -10,6 +17,12 @@ body{
     background-color: #010A26;
     color: whitesmoke;
     font-family: 'Lexend Deca', sans-serif;
+    transition: all 350ms;
+}
+
+.light-mode{
+    background-color: whitesmoke;
+    color: #010A26;
 }
 
 h1{
@@ -36,13 +49,90 @@ p{
 
 }
 
+.buttons-light-mode{
+    border: 2px solid #010A26;
+    color: #010A26;
+}
+
+.buttons-light-mode:hover{
+    background-color: #010A26;
+    color: whitesmoke;
+    border: 2px solid #010A26;
+}
+
 button{
     text-decoration: none;
-    border: 2px solid white;
+    border: 2px solid whitesmoke;
     padding: 3%;
     border-radius: 5px;
     font-family: 'Lexend Deca' sans-serif;
     font-size: 16px;
     background: none;
     color: whitesmoke;
+    transition: all 350ms;
+    cursor: pointer;
 }
+
+button:hover{
+    background:fixed;
+    background-color: whitesmoke;
+    color: #010A26;
+    border: 2px solid whitesmoke;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 50px;
+  }
+  
+  label {
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    background-color: var(--dark);
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  
+  input {
+    position: absolute;
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+  
+  input:checked ~ .slider {
+    background-color: var(--light);
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    top: 3.5px;
+    left: 4px;
+    width: 18.75px;
+    height: 18.75px;
+    border-radius: 50%;
+    box-shadow: inset 7px -1px 0px 0px var(--light);
+    background-color: var(--dark);
+    transition: 0.3s;
+  }
+  
+  input:checked ~ .slider::before {
+    transform: translateX(23.75px);
+    background-color: var(--dark);
+    box-shadow: none;
+  }
+
+  .container-switch{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 2vh;
+  }

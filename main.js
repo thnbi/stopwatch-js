@@ -7,6 +7,7 @@ const second = 1000;
 const sec = document.querySelector(".seconds");
 const min = document.querySelector(".minutes");
 
+const buttons = document.querySelectorAll("button");
 const buttonStart = document.getElementById("start");
 const buttonStop = document.getElementById("stop");
 const buttonClear = document.getElementById("clear");
@@ -14,6 +15,25 @@ const buttonClear = document.getElementById("clear");
 buttonStart.addEventListener("click", startTimer);
 buttonStop.addEventListener("click", stopTimer);
 buttonClear.addEventListener("click", clearTimer);
+
+const checkbox = document.querySelector(`#checkbox`);
+const body = document.querySelector("body");
+
+checkbox.addEventListener("click", lightmode);
+
+function lightmode(){
+    if(checkbox.checked == true){
+        body.classList.add("light-mode");
+        for(let i = 0; i < buttons.length; i++){
+            buttons[i].classList.add("buttons-light-mode")
+        }
+    }else{
+        body.classList.remove("light-mode");
+        for(let i = 0; i < buttons.length; i++){
+            buttons[i].classList.remove("buttons-light-mode")
+        }
+    }
+}
 
 function startTimer(){
     if(seconds == 0 && minutes == 0 || pause == 1){
@@ -60,4 +80,3 @@ function timer(){
     }
     console.log(seconds);
 }
-

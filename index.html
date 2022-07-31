@@ -9,12 +9,20 @@
 </head>
 <body>
     <div class="wrapper">
+        <div class="container-switch">
+            <div class = 'toggle-switch'>
+                <label>
+                    <input type = 'checkbox' id="checkbox">
+                    <span class = 'slider'></span>
+                </label>
+            </div>
+        </div>
         <h1>stopwatch</h1>
         <p><span class="minutes">00</span>:<span class="seconds">00</span></p>
         <div class="buttons">
-            <button id="start">start</button>
-            <button id="stop">stop</button>
-            <button id="clear">clear</button>
+            <button class="button" id="start">start</button>
+            <button class="button" id="stop">stop</button>
+            <button class="button" id="clear">clear</button>
         </div>
     </div>
     <script src="main.js"></script>
